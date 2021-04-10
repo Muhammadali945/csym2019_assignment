@@ -6,17 +6,19 @@ var vcity;
 document.addEventListener('DOMContentLoaded', function () {
 const weather = document.querySelector('#weather-table > tbody');
 	var select = document.getElementById("select");
+	let modify = document.getElementById("new");
 		let xhr = new XMLHttpRequest();
 		
 
 		xhr.onload = function() {
 		resObj = JSON.parse(this.responseText);
 		populate(resObj);
-		//console.log(resObj);
+		console.log(resObj);
 		}
 
 		xhr.open('get','weather.json');
 		xhr.send();
+
 
 		function populate(resObj){
 		Object.entries(resObj).forEach(([k,v]) => {
@@ -40,6 +42,7 @@ const weather = document.querySelector('#weather-table > tbody');
 			th.textContent = k;
 			tr1.appendChild(th);
 			tr2.appendChild(td3);
+			modify.innerHTML = '';
 			for (i=0;i<obj.length;i++)
 			{
 			const td2 = document.createElement('td');
@@ -48,13 +51,22 @@ const weather = document.querySelector('#weather-table > tbody');
 			td.textContent = obj[i].cityName;
 			tr2.appendChild(td);
 			tr3.appendChild(td2);
-				
+			
+			
+			let p = document.createElement('p');
+			modify.appendChild(p);
+			p.innerHTML = obj[i].cityName;
+
 			}
 			
 			weather.appendChild(tr1);
 			weather.appendChild(tr2);
 			weather.appendChild(tr3);
 			
+			
+			
+			
+
 
 
 			});

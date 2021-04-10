@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/assignment_part_2/style.css" />
+      <script src="/assignment_part_2/weatherapi.js"></script>
+
+      <title>Weather Forecast</title>
+     
+      
+  </head>
+  <body>
+    <h1>UK Weather Forecast</h1>
+      <select id="select" class="select-css" onchange="myFunction()">
+        <option value="default">Choose Country</option>
+      </select>
+  <p>Choose from following cities</p>
+  <select id="select1" class="select-css" onchange="citySelected()">
+    <option value="default">default</option>
+  </select>
+  <p></p>
+  <p class="toc_title">Results for the selected City</p>
+  <div>
+    <p>
+    <img id = "icon">
+    <img id = "warningicon" style="width: 1000px; width: 100px;">
+    </p>
+  </div>
+  
+  <div id="toc_container">
+    
+      <table id = "info" class = "table" style =  "border:solid">
+        <th>Parameter</th><th>Value</th>
+        <tr id ></tr>
+          <td> City: </td>
+          <td id = "city"></td>
+        </tr>
+        <tr id ></tr>
+          <td> Date: </td>
+          <td id = "date"></td>
+        </tr>
+        <tr id = "row">
+          <td>Weather Conditions: </td>
+          <td id = "conditions"></td>
+        </tr>
+        <tr id = "row">
+          <td>Temperature (C): </td>
+          <td id = "data"></td>
+        </tr>
+        <tr id = "row">
+          <td>Temperature (F): </td>
+          <td id = "tempF"></td>
+        </tr>
+        <tr>
+          <td>Wind Speed (mph): </td>
+          <td id = "wind"></td>
+        </tr>
+        <tr>
+          <td>Wind Speed (kph): </td>
+          <td id = "windkph"></td>
+        </tr>
+        <tr>
+          <td>Wind Direction: </td>
+          <td id = "winddir"></td>
+        </tr>
+        <tr>
+          <td>Wind Direction(text): </td>
+          <td id = "winddirInCardinal"></td>
+        </tr>
+      </table>
+  </div>
+<div id = "warning">
+  <p id = "tw"></p>
+  <p id = "ww"></p>
+</div>
+<p id="demo"></p>
+<p id="demo1"></p>
+<div id="new"></div>
+</body>
+ 
+</html>
