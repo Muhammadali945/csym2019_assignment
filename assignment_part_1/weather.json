@@ -1,0 +1,394 @@
+{
+  "England": [
+    {
+       
+        "cityId":"1",
+        "cityName":"Bath",
+        "currentConditions":"Rain",
+        "temperature": "8",
+        "windSpeed":"33",
+        "windDirection":"South",
+        "wind_chill_factor":"29"
+      
+    
+    },
+    {
+        
+          "cityId":"2",
+          "cityName":"Bristol",
+          "currentConditions":"Rain",
+          "temperature": "7",
+          "windSpeed":"33",
+          "windDirection":"West",
+          "wind_chill_factor":"28"
+        
+    },
+    {
+        "cityId":"3",
+        "cityName":"Birmingham",
+        "currentConditions":"Rain",
+        "temperature": "8",
+        "windSpeed":"32",
+        "windDirection":"West",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"4",
+        "cityName":"Bradford",
+        "currentConditions":"Rain",
+        "temperature": "6",
+        "windSpeed":"33",
+        "windDirection":"North",
+        "wind_chill_factor":"26"
+    },
+    {
+        "cityId":"5",
+        "cityName":"Bournemouth",
+        "currentConditions":"Heavy Cloud",
+        "temperature": "10",
+        "windSpeed":"28",
+        "windDirection":"South",
+        "wind_chill_factor":"27"
+    },
+    {
+        "cityId":"6",
+        "cityName":"Cambridge",
+        "currentConditions":"Rain",
+        "temperature": "6",
+        "windSpeed":"32",
+        "windDirection":"North",
+        "wind_chill_factor":"25"
+    },
+    {
+        "cityId":"7",
+        "cityName":"Canterbury",
+        "currentConditions":"Heavy Cloud",
+        "temperature": "8",
+        "windSpeed":"31",
+        "windDirection":"West",
+        "wind_chill_factor":"27"
+    },
+    {
+        "cityId":"8",
+        "cityName":"Chester",
+        "currentConditions":"Rain",
+        "temperature": "6",
+        "windSpeed":"29",
+        "windDirection":"North",
+        "wind_chill_factor":"25"
+    },
+    {
+        "cityId":"9",
+        "cityName":"Derby",
+        "currentConditions":"Heavy Rains",
+        "temperature": "5",
+        "windSpeed":"32",
+        "windDirection":"North",
+        "wind_chill_factor":"27"
+    },
+    {
+        "cityId":"10",
+        "cityName":"Exeter",
+        "currentConditions":"Sun",
+        "temperature": "11",
+        "windSpeed":"31",
+        "windDirection":"South",
+        "wind_chill_factor":"29"
+    },
+    {"cityId":"11",
+    "cityName":"Gloucester",
+    "currentConditions":"Sun",
+    "temperature": "11",
+    "windSpeed":"30",
+    "windDirection":"West",
+    "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"12",
+        "cityName":"Lancaster",
+        "currentConditions":"Rain",
+        "temperature": "7",
+        "windSpeed":"32",
+        "windDirection":"East",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"13",
+        "cityName":"Leeds",
+        "currentConditions":"Rain",
+        "temperature": "5",
+        "windSpeed":"32",
+        "windDirection":"North",
+        "wind_chill_factor":"25"
+    },
+    {
+        "cityId":"14",
+        "cityName":"Liverpool",
+        "currentConditions":"Rain",
+        "temperature": "5",
+        "windSpeed":"32",
+        "windDirection":"East",
+        "wind_chill_factor":"25"
+    },
+    {
+        "cityId":"15",
+        "cityName":"London",
+        "currentConditions":"Sun",
+        "temperature": "11",
+        "windSpeed":"30",
+        "windDirection":"South",
+        "wind_chill_factor":"30"
+    },
+    {
+        "cityId":"16",
+        "cityName":"Manchester",
+        "currentConditions":"Hail",
+        "temperature": "6",
+        "windSpeed":"33",
+        "windDirection":"East",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"17",
+        "cityName":"Newcastle Upon Tyne",
+        "currentConditions":"Rain",
+        "temperature": "5",
+        "windSpeed":"36",
+        "windDirection":"South",
+        "wind_chill_factor":"24"
+    },
+    {
+        "cityId":"18",
+        "cityName":"Norwich",
+        "currentConditions":"Heavy Cloud",
+        "temperature": "8",
+        "windSpeed":"32",
+        "windDirection":"West",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"19",
+        "cityName":"Nottingham",
+        "currentConditions":"Rain",
+        "temperature": "6",
+        "windSpeed":"35",
+        "windDirection":"South",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"20",
+        "cityName":"Oxford",
+        "currentConditions": "Heavy Cloud",
+        "temperature": "10",
+        "windSpeed":"31",
+        "windDirection":"South",
+        "wind_chill_factor":"27"
+    },
+    {
+        "cityId":"21",
+        "cityName":"Plymouth",
+        "currentConditions":"Sun",
+        "temperature": "10",
+        "windSpeed":"31",
+        "windDirection":"South",
+        "wind_chill_factor":"27"
+    },
+    {
+        "cityId":"22",
+        "cityName":"Ripon",
+        "currentConditions":"Heavy Cloud",
+        "temperature": "8",
+        "windSpeed":"35",
+        "windDirection":"West",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"23",
+        "cityName":"Salford",
+        "currentConditions":"Rain",
+        "temperature": "6",
+        "windSpeed":"35",
+        "windDirection":"South",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"24",
+        "cityName":"Sheffield",
+        "currentConditions":"Heavy Cloud",
+        "temperature": "7",
+        "windSpeed":"33",
+        "windDirection":"West",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"25",
+        "cityName":"Wakefield",
+        "currentConditions":"Heavy Cloud",
+        "temperature": "9",
+        "windSpeed":"31",
+        "windDirection":"South",
+        "wind_chill_factor":"26"
+    },
+    {
+        "cityId":"26",
+        "cityName":"Wolverhampton",
+        "currentConditions":" Sun",
+        "temperature": "9",
+        "windSpeed":"32",
+        "windDirection":"South",
+        "wind_chill_factor":"27"
+    },
+    {
+        "cityId":"27",
+        "cityName":"Worcester",
+        "currentConditions":"Rain",
+        "temperature": "6",
+        "windSpeed":"34",
+        "windDirection":"South",
+        "wind_chill_factor":"27"
+    }  
+],
+  "Scotland":[
+    {
+    "cityId":"1",
+    "cityName":"Aberdeen",
+    "currentConditions":"Snow",
+    "temperature": "4",
+    "windSpeed":"35",
+    "windDirection":"South",
+    "wind_chill_factor":"28"      
+  },
+  {
+    "cityId":"2",
+    "cityName":"Dundee",
+    "currentConditions":"Snow",
+    "temperature": "5",
+    "windSpeed":"33",
+    "windDirection":"South",
+    "wind_chill_factor":"28"
+  },
+  {
+    "cityId":"3",
+    "cityName":"Edinburgh",
+    "currentConditions":"Snow",
+    "temperature": "6",
+    "windSpeed":"32",
+    "windDirection":"East",
+    "wind_chill_factor":"26"
+  },
+  {
+    "cityId":"4",
+    "cityName":"Glasgow",
+    "currentConditions":"Snow",
+    "temperature": "6",
+    "windSpeed":"32",
+    "windDirection":"South",
+    "wind_chill_factor":"28"
+  },
+  {
+    "cityId":"5",
+    "cityName":"Bristol",
+    "currentConditions":"Rain",
+    "temperature": "7",
+    "windSpeed":"33",
+    "windDirection":"West",
+    "wind_chill_factor":"28"
+  },
+  {
+    "cityId":"6",
+    "cityName":"Inverness",
+    "currentConditions":"Snow",
+    "temperature": "5",
+    "windSpeed":"33",
+    "windDirection":"South",
+    "wind_chill_factor":"28"
+  }
+],
+"Wales":[
+    {
+        "cityId":"1",
+        "cityName":"Bangor",
+        "currentConditions":"Rain",
+        "temperature": "8",
+        "windSpeed":"32",
+        "windDirection":"South",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"2",
+        "cityName":"Cardiff",
+        "currentConditions":"Rain",
+        "temperature": "8",
+        "windSpeed":"32",
+        "windDirection":"South",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"3",
+        "cityName":"Newport",
+        "currentConditions":"Rain",
+        "temperature": "7",
+        "windSpeed":"33",
+        "windDirection":"South",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"4",
+        "cityName":"Swansea",
+        "currentConditions":"Rain",
+        "temperature": "7",
+        "windSpeed":"33",
+        "windDirection":"West",
+        "wind_chill_factor":"28"
+    }
+],
+  "NortherIreland":[
+    {
+        "cityId":"1",
+        "cityName":"Armagh",
+        "currentConditions":"Snow",
+        "temperature": "4",
+        "windSpeed":"36",
+        "windDirection":"West",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"2",
+        "cityName":"Belfast",
+        "currentConditions":"Snow",
+        "temperature": "8",
+        "windSpeed":"33",
+        "windDirection":"East",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"3",
+        "cityName":"Londonderry",
+        "currentConditions":"Snow",
+        "temperature": "7",
+        "windSpeed":"33",
+        "windDirection":"East",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"4",
+        "cityName":"Lisburn",
+        "currentConditions":"Snow",
+        "temperature": "7",
+        "windSpeed":"33",
+        "windDirection":"East",
+        "wind_chill_factor":"28"
+    },
+    {
+        "cityId":"5",
+        "cityName":"Newry",
+        "currentConditions":"Snow",
+        "temperature": "5",
+        "windSpeed":"36",
+        "windDirection":"North",
+        "wind_chill_factor":"27"
+    }
+
+]
+
+}
