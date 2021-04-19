@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		console.log(resObj);
 		}
 
-		xhr.open('get','/weather.json');
+		xhr.open('get','/assignment_part_2/UK_city_Data.json');
 		xhr.send();
 
 
@@ -55,10 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			tr3.appendChild(td2);
 				
 			}
-			
-			// weather.appendChild(tr1);
-			// weather.appendChild(tr2);
-			// weather.appendChild(tr3);
 			
 
 
@@ -210,28 +206,5 @@ function getCardinal(angle) {
                 : (offsetAngle >= 6 * degreePerDirection && offsetAngle < 7 * degreePerDirection) ? "W"
                   : "NW";
 }
-		// for (i=0;i<obj.length;i++)
-		// {var option = document.createElement("OPTION"),
-		// 		txt = document.createTextNode(obj[i].cityName);
-		// 	option.appendChild(txt);
-
-		// 	//option.setAttribute("value",k);
-        // 	select1.insertBefore(option,select1.lastChild);}
-        
-        // var select = document.getElementById("select");
-		// let xhr = new XMLHttpRequest();
 		
-
-		// xhr.onload = function() {
-		// resObj = JSON.parse(this.responseText);
-
-		// //populate(resObj);
-		// console.log(resObj);
-		// }
-
-		// xhr.open('get','https://api.openweathermap.org/data/2.5/weather?q=London&appid=d0097b40572987aa800d22357fc702de',true);
-		// xhr.send();
-
-
-	
 		
