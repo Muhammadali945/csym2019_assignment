@@ -5,7 +5,7 @@
         "cityId":"1",
         "cityName":"Bath",
         "currentConditions":"Rain",
-        "temperature": "8",
+        "temperature": "10 ",
         "windSpeed":"33",
         "windDirection":"South",
         "wind_chill_factor":"29"

@@ -1,12 +1,15 @@
-
-var value;
-var key = [];
-var resObj;
-var vcity;
-let p;
+// This event listens runs a function "refreshPage" when DOM is loaded.
 document.addEventListener('DOMContentLoaded', function () {
-const weather = document.querySelector('#weather-table > tbody');
-	
+	refreshPage();
+});
+
+/*
+This function is responsible for 
+*/
+function refreshPage(){
+
+var weather = document.querySelector('#weather-table > tbody');
+		weather.innerHTML = '';
 		let xhr = new XMLHttpRequest();
 		
 
@@ -16,12 +19,12 @@ const weather = document.querySelector('#weather-table > tbody');
 		console.log(resObj);
 		}
 
-		xhr.open('get','weather.json');
+		xhr.open('get','/assignment_part_1/weather.json');
 		xhr.send();
 
 
 		function populate(resObj){
-
+			
             console.log(resObj[0]);
 			Object.entries(resObj).forEach(([k,v]) => {
 			console.log("The key: ",k);
@@ -30,6 +33,12 @@ const weather = document.querySelector('#weather-table > tbody');
 			countryRow.innerHTML = k;
 			weather.appendChild(countryRow);
 
+			var trh = document.createElement("tr");
+			var heading = `<th> City ID </th>` + `<th>City Name </th>`+ `<th>Current Cnditions </th>` + `<th>Temperature</th>` 
+			+ `<th>Wind Speed</th>` + `<th>Wind Direction</th>` + `<th>Wind chill factor</th>` + `<th>Weather Icon</th>`;
+			trh.innerHTML = heading;
+			weather.appendChild(trh);
+			
 			// var option = document.createElement("OPTION"),
 			// 	txt = document.createTextNode(k);
 			// option.appendChild(txt);
@@ -90,9 +99,15 @@ const weather = document.querySelector('#weather-table > tbody');
 		// 	//option.setAttribute("value",k);
 		// 	select.insertBefore(option,select.lastChild);}
 		// })
-
 		
-	});
+		setTimeout(() => {
+			refreshPage();
+			console.log("called");
+		}, 10000);
+	}
+		
+	
+
 
 	function myFunction() {
 		var x = document.getElementById("select").value;
@@ -138,13 +153,5 @@ const weather = document.querySelector('#weather-table > tbody');
 	}
 
 
-
-		// for (i=0;i<obj.length;i++)
-		// {var option = document.createElement("OPTION"),
-		// 		txt = document.createTextNode(obj[i].cityName);
-		// 	option.appendChild(txt);
-
-		// 	//option.setAttribute("value",k);
-		// 	select1.insertBefore(option,select1.lastChild);}
 	
 		
