@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--Link css file-->
     <link rel="stylesheet" type="text/css" href="/Task2/style.css" />
+    <!--Link js file-->
       <script src="/Task2/apiweather.js"></script>
-
-      <title>Weather Forecast</title>
-     
-      
+      <title>API Weather Forecast</title> 
   </head>
   <body>
     <h1>UK Weather Forecast</h1>
-      <select id="cities" class="select-css" onchange="myFunction()">
+    <p>Please choose a Country to view weather conditions</p>
+      <!--Call function when selection chages-->
+      <select id="Country" class="select-css" onchange="changeCountrySelection()">
         <option value="default">Choose Country</option>
       </select>
   <p>Choose from following cities</p>
-  <select id="select1" class="select-css" onchange="citySelected()">
+  <!--Call function when selection chages-->
+  <select id="City" class="select-css" onchange="citySelected()">
     <option value="default">default</option>
   </select>
-  <p></p>
   <p class="toc_title">Results for the selected City</p>
+  <!--This div is for displaying weather icon and warning icon (if any)-->
   <div>
     <p>
     <img id = "icon">
     <img id = "warningicon" style="width: 1000px; width: 100px;">
     </p>
   </div>
-  
+  <!--This Div populate a table of all the weather data values returned 
+  from the API object. It is populated dynamicaly upon choosing city-->
   <div id="toc_container">
     
       <table id = "info" class = "table" style =  "border:solid">
@@ -44,7 +47,7 @@
         </tr>
         <tr id = "row">
           <td>Temperature (C): </td>
-          <td id = "data"></td>
+          <td id = "tempC"></td>
         </tr>
         <tr id = "row">
           <td>Temperature (F): </td>
@@ -68,13 +71,13 @@
         </tr>
       </table>
   </div>
+  <!--Another div for displaying the warning messages (wind or temperature). This is done by checking certain parameters
+  in java script code-->
 <div id = "warning">
   <p id = "tw"></p>
   <p id = "ww"></p>
 </div>
-<p id="demo"></p>
+<p id="selected_Country"></p>
 <p id="demo1"></p>
-<div id="new"></div>
 </body>
- 
 </html>
