@@ -1,7 +1,11 @@
-
+// This event listens runs a function "refreshPage" when DOM is loaded.
 document.addEventListener('DOMContentLoaded', function () {
 	refreshPage();
 });
+
+/*
+This function is responsible for 
+*/
 function refreshPage(){
 
 var weather = document.querySelector('#weather-table > tbody');
@@ -149,15 +153,5 @@ var weather = document.querySelector('#weather-table > tbody');
 	}
 
 
-
-
-
-		// for (i=0;i<obj.length;i++)
-		// {var option = document.createElement("OPTION"),
-		// 		txt = document.createTextNode(obj[i].cityName);
-		// 	option.appendChild(txt);
-
-		// 	//option.setAttribute("value",k);
-		// 	select1.insertBefore(option,select1.lastChild);}
 	
 		
