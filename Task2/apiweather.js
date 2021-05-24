@@ -1,38 +1,37 @@
-
 var value;
 var key = [];
-var resObj;
+var result_Object;
 var vcity, c, warningicon;
 document.addEventListener('DOMContentLoaded', function () {
-//const weather = document.querySelector('#weather-table > tbody');
-	var select = document.getElementById("select");
-		let xhr = new XMLHttpRequest();
-		
-
-		xhr.onload = function() {
-		resObj = JSON.parse(this.responseText);
-
-		populate(resObj);
-		console.log(resObj);
+	// select 'cities' from the HTML element
+	var cities = document.getElementById("cities");
+		let xhr = new XMLHttpRequest(); // raise new xhr request
+		xhr.onload = function() { // call back function when the request loads
+			if(xhr.readyState == 4 && xhr.status == 200) // checking response object status
+					{
+						result_Object = JSON.parse(this.responseText); // Parsing the responsetext attribute of the result object
+						populate_cities(result_Object); // call the populate function
+						console.log(result_Object); // log the object on console
+					}
 		}
 
-		xhr.open('get','/assignment_part_2/UK_city_Data.json');
-		xhr.send();
+		xhr.open('get','/Task2/UK_city_Data.json'); // open a GET request for loading json file from directory
+		xhr.send(); // send request
 
-
-		
-   
-
-		function populate(resObj){
-		Object.entries(resObj).forEach(([k,v]) => {
-			console.log("The key: ",k);
-			var option = document.createElement("OPTION"),
-				txt = document.createTextNode(k);
+		/*
+		This function is called when the DOM content is loaded. 
+		It is responsible to load cities in the "cities" select element of the HTML page
+		*/
+		function populate_cities(result_Object){
+		Object.entries(result_Object).forEach(([k,v]) => { //The forEach() method calls a function (a callback function) once
+			//for each array element. 
+			var option = document.createElement("OPTION"), // 
+			txt = document.createTextNode(k);
 			option.appendChild(txt);
 			option.setAttribute("value",k);
-			select.insertBefore(option,select.lastChild);
+			select.insertBefore(option,cities.lastChild);
 		
-			
+			/*
 			value = v;
 			obj = v;
 		
@@ -54,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			tr2.appendChild(td);
 			tr3.appendChild(td2);
 				
-			}
+			}*/
 			
 
 
@@ -80,8 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		document.getElementById("demo").innerHTML = "You selected: " + x;
 		console.log(x);
 		select1.length = 0;
-		//console.log(resObj);
-		Object.entries(resObj).forEach(([k,v]) => {
+		Object.entries(result_Object).forEach(([k,v]) => {
 			if (x == k){
 				
 				vcity = v;
