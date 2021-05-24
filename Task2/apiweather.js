@@ -1,16 +1,12 @@
-var value;
-var key = [];
-var result_Object;
-var vcity, c, warningicon;
 document.addEventListener('DOMContentLoaded', function () {
-	// select 'cities' from the HTML element
-	var cities = document.getElementById("cities");
+	// select 'Country' from the HTML element
+	var Country = document.getElementById("Country");
 		let xhr = new XMLHttpRequest(); // raise new xhr request
 		xhr.onload = function() { // call back function when the request loads
 			if(xhr.readyState == 4 && xhr.status == 200) // checking response object status
 					{
 						result_Object = JSON.parse(this.responseText); // Parsing the responsetext attribute of the result object
-						populate_cities(result_Object); // call the populate function
+						populate_Country(result_Object); // call the populate function
 						console.log(result_Object); // log the object on console
 					}
 		}
@@ -20,129 +16,112 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		/*
 		This function is called when the DOM content is loaded. 
-		It is responsible to load cities in the "cities" select element of the HTML page
+		It is responsible to load Country in the "Country" select element of the HTML page
 		*/
-		function populate_cities(result_Object){
+		function populate_Country(result_Object){
 		Object.entries(result_Object).forEach(([k,v]) => { //The forEach() method calls a function (a callback function) once
 			//for each array element. 
-			var option = document.createElement("OPTION"), // 
-			txt = document.createTextNode(k);
-			option.appendChild(txt);
-			option.setAttribute("value",k);
-			select.insertBefore(option,cities.lastChild);
+			var option = document.createElement("OPTION"); // create option element 
+			txt = document.createTextNode(k); // create text node for carrying city value
+			option.appendChild(txt); // append city name to option element
+			Country.insertBefore(option,Country.lastChild);// insert all the options (Country) to the Country HTML element
 		
-			/*
-			value = v;
-			obj = v;
-		
-			const tr1 = document.createElement('tr');
-			const tr2 = document.createElement('tr');
-			const tr3 = document.createElement('tr');
-			const th = document.createElement('th');
-			const td3 = document.createElement('td');
-			td3.textContent = "City Name";
-			th.textContent = k;
-			tr1.appendChild(th);
-			tr2.appendChild(td3);
-			for (i=0;i<obj.length;i++)
-			{
-			const td2 = document.createElement('td');
-			td2.textContent = obj[i].currentConditions;
-			const td = document.createElement('td');
-			td.textContent = obj[i].cityName;
-			tr2.appendChild(td);
-			tr3.appendChild(td2);
-				
-			}*/
-			
-
-
 			});
 		}
-
-		// document.getElementById("select").onchange(e=> {
-		// document.getElementById("demo").innerHTML = "You selected: " + x;
-		// console.log(x);
-		// for (i=0;i<obj.length;i++)
-		// {var option = document.createElement("OPTION"),
-		// 		txt = document.createTextNode(obj.cityName);
-		// 	option.appendChild(txt);
-		// 	//option.setAttribute("value",k);
-		// 	select.insertBefore(option,select.lastChild);}
-		// })
-
-		
 	});
-
-	function myFunction() {
-		var x = document.getElementById("select").value;
-		document.getElementById("demo").innerHTML = "You selected: " + x;
+	/*
+	This function is called from the apiweather.html when the country selected is changed by the user. 
+	It loads the respective cities of the newly selected country.
+	*/
+	function changeCountrySelection() {
+		var x = document.getElementById("Country").value;
+		document.getElementById("selected_Country").innerHTML = "You selected: " + x; // Tells user the selected value of country on webpage
 		console.log(x);
-		select1.length = 0;
-		Object.entries(result_Object).forEach(([k,v]) => {
-			if (x == k){
+		City.length = 0; // Deletes the previous text so new Country selected can be displayed
+		Object.entries(result_Object).forEach(([k,v]) => { //The forEach() method calls a function (a callback function) once
+			//for each array element. 
+			if (x == k){  //checks when the selected Country matches with the K (key for country)
 				
-				vcity = v;
-				for (i=0;i<v.length;i++)
+				vcity = v;  // stores the value (cities) object in a variable called "vcity"
+				for (i=0;i<v.length;i++) // loops through length of all the cities
 				{
+					//appends all the cities in to HTML element called "City"
 					var option = document.createElement("OPTION");
 					txt = document.createTextNode(v[i].cityName);
 					option.appendChild(txt);
-
-					//option.setAttribute("value",k);
-					select1.insertBefore(option,select1.lastChild);
+					City.insertBefore(option,City.lastChild);
 				}
 			}
 		});
 	}
 
+	/*
+	This function is called from the apiweather.html when the city selected is changed by the user. 
+	It passes the value of city selectedto another function "fetchApiWeatherData" which return the current
+	weather data of the selected city
+	*/
+
 	function citySelected(){
-		 c = document.getElementById("select1").value;
+		 c = document.getElementById("City").value;
 		document.getElementById("demo1").innerHTML = "You selected: " + c;
 		document.getElementById("tw").textContent = " ";
 		//console.log(vcity);
 		for (i=0;i<vcity.length;i++){
 			if(c==vcity[i].cityName){
                 console.log(vcity[i]);
-                populate1(c);
+                fetchApiWeatherData(c);
 			}
 		
 		}
     }
-    
-function populate1(city){
-    city = city;
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function() {
-		data = JSON.parse(this.responseText);
-        var cond = data['weather'][0]['description'];
-        var icon = data['weather'][0]['icon'];
-        var temperature = data['main']['temp'];
-        var windSpeed = data['wind']['speed'];
-        var windDirection = data["wind"]["deg"];
-        
-        document.getElementById("city").innerHTML = data['name'];
-        document.getElementById("date").innerHTML = new Date().toISOString().slice(0, 10)
-        document.getElementById("conditions").innerHTML = cond;
-        document.getElementById("data").innerHTML = (temperature-273).toFixed(0) + ' \u00B0C';
-        document.getElementById("tempF").innerHTML = kelvinToFarenhite(temperature);
-        document.getElementById("wind").innerHTML = windSpeed.toFixed(0);
-        document.getElementById("windkph").innerHTML = (windSpeed*1.6).toFixed(0);
-        document.getElementById("icon").setAttribute (`src`,`http://openweathermap.org/img/wn/${icon}@2x.png`);
-        warningicon = document.getElementById("warningicon");
-        document.getElementById("winddir").innerHTML = (windDirection + '\u00B0');
-        document.getElementById("winddirInCardinal").innerHTML = getCardinal(windDirection);
-        
-        var temperatureWarning = document.getElementById('tw');
-        var windWarning = document.getElementById('ww');
-        temperatureWarning.innerHTML = checkTemperatureWarning(temperature);
-        windWarning.innerHTML = checkWindWarning(windSpeed);
-		}
-
-		xhr.open('get','https://api.openweathermap.org/data/2.5/weather?q=' + city +' &appid=d0097b40572987aa800d22357fc702de',true);
-		xhr.send();
+	
+	/*
+	This function is responsible for sending a request to the API. The city passed to this function for
+	which the data is requested is dynamically loaded in to the request. 
+	Upon retrievel of data 
+	*/
+	function fetchApiWeatherData(city){
+		city = city;
+		let xhr = new XMLHttpRequest();
+		xhr.onload = function() {
+			if(xhr.readyState == 4 && xhr.status == 200){
+				data = JSON.parse(this.responseText);
+				//get the required information from the object returned from API
+				var cond = data['weather'][0]['description'];  //weather conitions
+				var icon = data['weather'][0]['icon']; // icon name for the weather
+				var temperature = data['main']['temp']; // temperature (in kelvin)
+				var windSpeed = data['wind']['speed']; // speed in mph
+				var windDirection = data["wind"]["deg"]; // wind direction in degrees
+			
+			// select HTML elements from apiweather.html and populate with API returned values
+			document.getElementById("city").innerHTML = data['name'];
+			document.getElementById("date").innerHTML = new Date().toISOString().slice(0, 10)
+			document.getElementById("conditions").innerHTML = cond;
+			document.getElementById("tempC").innerHTML = (temperature-273).toFixed(0) + ' \u00B0C';
+			document.getElementById("tempF").innerHTML = kelvinToFarenhite(temperature);
+			document.getElementById("wind").innerHTML = windSpeed.toFixed(0);
+			document.getElementById("windkph").innerHTML = (windSpeed*1.6).toFixed(0);
+			document.getElementById("icon").setAttribute (`src`,`http://openweathermap.org/img/wn/${icon}@2x.png`);
+			warningicon = document.getElementById("warningicon");
+			document.getElementById("winddir").innerHTML = (windDirection + '\u00B0');
+			document.getElementById("winddirInCardinal").innerHTML = getCardinalDirection(windDirection);
+			
+			// Call function to check if there is a wind/temperature warning
+			var temperatureWarning = document.getElementById('tw');
+			var windWarning = document.getElementById('ww');
+			temperatureWarning.innerHTML = checkTemperatureWarning(temperature);
+			windWarning.innerHTML = checkWindWarning(windSpeed);
+				}
+			}
+			//sending request to the weathermap API, the city nameis dynamically plugged in request
+			xhr.open('get','https://api.openweathermap.org/data/2.5/weather?q=' + city +' &appid=d0097b40572987aa800d22357fc702de',true);
+			xhr.send();
 
 }
+/**
+ * This function revieves a temperature in Kelvin and returns after 
+ * converting in Farenhite.
+ */
 
 const kelvinToFarenhite = (val) => {
     let cTemp = (val-273);
@@ -150,6 +129,11 @@ const kelvinToFarenhite = (val) => {
     return (cToFahr).toFixed(0) + ' \u00B0F';
 }
 
+/**
+ * This function recieves a temperature and checks whether its between -5 and 35.
+ * if true, Calls another function to show warning icon and,
+ *  Also return a warning text to be displayed on HTML page
+ */
 const checkTemperatureWarning = (val) =>{
     let cTemp = (val-273).toFixed(0);
     console.log(cTemp);
@@ -164,6 +148,11 @@ const checkTemperatureWarning = (val) =>{
     return '';
 }
 
+/**
+ * This function recieves a windSpeed in mph and checks if its more than 50mph
+ * if true, Calls another function to show warning icon and,
+ *  Also return a warning text to be displayed on HTML page
+ */
 const checkWindWarning = (val) =>{
     
     if (val>50)
@@ -177,32 +166,19 @@ const checkWindWarning = (val) =>{
     return '';
 }
 
+// This function shows a warning sign whenever called
 const showWarning = () =>{
     warningicon.setAttribute (`src`,`./weather_icons/warning.png`);
 
 } 
+/**
+ * This function recieves angle of wind and returns a textual description of direction
+ * @source: https://stackoverflow.com/questions/7490660/converting-wind-direction-in-angles-to-text-words
+ */
 
-function getCardinal(angle) {
-    /** 
-     * Customize by changing the number of directions you have
-     * We have 8
-     */
-    const degreePerDirection = 360 / 8;
-  
-    /** 
-     * Offset the angle by half of the degrees per direction
-     * Example: in 4 direction system North (320-45) becomes (0-90)
-     */
-    const offsetAngle = angle + degreePerDirection / 2;
-  
-    return (offsetAngle >= 0 * degreePerDirection && offsetAngle < 1 * degreePerDirection) ? "N"
-      : (offsetAngle >= 1 * degreePerDirection && offsetAngle < 2 * degreePerDirection) ? "NE"
-        : (offsetAngle >= 2 * degreePerDirection && offsetAngle < 3 * degreePerDirection) ? "E"
-          : (offsetAngle >= 3 * degreePerDirection && offsetAngle < 4 * degreePerDirection) ? "SE"
-            : (offsetAngle >= 4 * degreePerDirection && offsetAngle < 5 * degreePerDirection) ? "S"
-              : (offsetAngle >= 5 * degreePerDirection && offsetAngle < 6 * degreePerDirection) ? "SW"
-                : (offsetAngle >= 6 * degreePerDirection && offsetAngle < 7 * degreePerDirection) ? "W"
-                  : "NW";
+function getCardinalDirection(angle) {
+    const directions = ['↑ North', '↗ North Easternly', '→ Easterly', '↘ South Easterly', '↓ Southerly', '↙ South Westernely', '← Westernly', '↖ North Westernly'];
+    return directions[Math.round(angle / 45) % 8];
 }
 		
 		
