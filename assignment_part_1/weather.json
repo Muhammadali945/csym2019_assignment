@@ -9,8 +9,7 @@
         "windSpeed":"33",
         "windDirection":"South",
         "wind_chill_factor":"29"
-      
-    
+        
     },
     {
         
@@ -95,13 +94,14 @@
         "windDirection":"South",
         "wind_chill_factor":"29"
     },
-    {"cityId":"11",
-    "cityName":"Gloucester",
-    "currentConditions":"Sun",
-    "temperature": "11",
-    "windSpeed":"30",
-    "windDirection":"West",
-    "wind_chill_factor":"28"
+    {
+        "cityId":"11",
+        "cityName":"Gloucester",
+        "currentConditions":"Sun",
+        "temperature": "11",
+        "windSpeed":"30",
+        "windDirection":"West",
+        "wind_chill_factor":"28"
     },
     {
         "cityId":"12",

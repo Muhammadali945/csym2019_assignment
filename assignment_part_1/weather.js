@@ -4,59 +4,56 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /*
-This function is responsible for 
+This function is responsible for loading the Json file named "weather.json" from directory
+and call a function which will dynamically populate the body of "weather-table" with the resultant data
 */
 function refreshPage(){
 
-var weather = document.querySelector('#weather-table > tbody');
+	var weather; // variable for holding the weather table from html page
+	weather = document.querySelector('#weather-table > tbody');
 		weather.innerHTML = '';
-		let xhr = new XMLHttpRequest();
-		
+		let xhr = new XMLHttpRequest(); // Opens a new request
+				xhr.onload = function() {
+					if(xhr.readyState == 4 && xhr.status == 200) // checking response object status
+					{
+						result_Object = JSON.parse(this.responseText); // Parsing the responsetext attribute of the result object
+						populate(result_Object); // call the populate function
+						console.log(result_Object); // log the object on console
+					}
+				}
+		xhr.open('get','/assignment_part_1/weather.json'); // initiate a GET request to the specified location of JSON file
+		xhr.send(); // complete the request
 
-		xhr.onload = function() {
-		resObj = JSON.parse(this.responseText);
-		populate(resObj);
-		console.log(resObj);
-		}
-
-		xhr.open('get','/assignment_part_1/weather.json');
-		xhr.send();
-
-
-		function populate(resObj){
+/*
+This function is used populate the weather-table using the specific attribute of the result object from the 
+object in the refreshPage function
+*/
+		function populate(result_Object){
 			
-            console.log(resObj[0]);
-			Object.entries(resObj).forEach(([k,v]) => {
-			console.log("The key: ",k);
-			countryRow = document.createElement('tr');
+			Object.entries(result_Object).forEach(([k,v]) => { //The forEach() method calls a function (a callback function) once
+			// for every entry in Object
+			countryRow = document.createElement('th'); // creates a new heading element
 			countryRow.style.cssText = 'padding: 10px; font-family: Arial, Helvetica, sans-serif;text-align: left;background-color: grey; font-size:25px; color: white;'
-			countryRow.innerHTML = k;
-			weather.appendChild(countryRow);
+			countryRow.innerHTML = k; // Set the value of key (city) to the heading 
+			weather.appendChild(countryRow); //appends the heading to the table in each iteration
 
-			var trh = document.createElement("tr");
+			var trh = document.createElement("tr"); // creates a new row element
+			// creates variable called heading to add all the attributes of the values to forma heading row
 			var heading = `<th> City ID </th>` + `<th>City Name </th>`+ `<th>Current Cnditions </th>` + `<th>Temperature</th>` 
 			+ `<th>Wind Speed</th>` + `<th>Wind Direction</th>` + `<th>Wind chill factor</th>` + `<th>Weather Icon</th>`;
-			trh.innerHTML = heading;
-			weather.appendChild(trh);
+			trh.innerHTML = heading;// concatenates the headings to save that to "trh"
+			weather.appendChild(trh); // appends the trh to weather table
 			
-			// var option = document.createElement("OPTION"),
-			// 	txt = document.createTextNode(k);
-			// option.appendChild(txt);
-			// option.setAttribute("value",k);
-			// select.insertBefore(option,select.lastChild);
-		
-			
-			value = v;
-            obj = v;
-            
-            for (i=0;i<obj.length;i++){
-                var cond = obj[i].currentConditions;
-                var tr1 = document.createElement("tr");
-				var x = `<td>` + obj[i].cityId + `</td>` + `<td>` + obj[i].cityName + `</td>` + `<td>` + obj[i].currentConditions + `</td>` + `<td>` + obj[i].temperature + `</td>` 
-				+ `<td>` + obj[i].windSpeed + `</td>` + `<td>` + obj[i].windDirection + `</td>` + `<td>` + obj[i].wind_chill_factor + `</td>`
-                tr1.innerHTML = x;
-                var img = document.createElement("td");
-                
+            cities = v; // v are the cities associated with a particular country; countries are key (k)
+            for (i=0;i<cities.length;i++){ //loop through all the cities
+                var cond = cities[i].currentConditions; // a variable to store current condition for displaying weather icon
+                var tr1 = document.createElement("tr"); // create new row for inserting all values
+				var x = `<td>` + cities[i].cityId + `</td>` + `<td>` + cities[i].cityName + `</td>` + `<td>` + cities[i].currentConditions + `</td>` + `<td>` + cities[i].temperature + `</td>` 
+				+ `<td>` + cities[i].windSpeed + `</td>` + `<td>` + cities[i].windDirection + `</td>` + `<td>` + cities[i].wind_chill_factor + `</td>`
+                tr1.innerHTML = x; // apped data to the row created
+                var img = document.createElement("td"); // create new data cell for image corresponding to currentConditions
+				
+				// check which image to return as per the conition
                 if (cond == "Rain")
                 img.innerHTML = `<img src = './weather_icons/rain.png' width = "20px">`;
 
@@ -75,31 +72,12 @@ var weather = document.querySelector('#weather-table > tbody');
 				else if (cond == "Snow")
                 img.innerHTML = `<img src = './weather_icons/snow.png' width = "20px">`;
 
-                tr1.appendChild(img);
-                weather.appendChild(tr1);
+                tr1.appendChild(img); // append the image to main row
+                weather.appendChild(tr1); //append the row to main weather-table
             }
-		
-			
-			
-			
-			
-			//weather.appendChild(tr2);
-			//weather.appendChild(tr3);
-		
 			});
 		}
-
-		// document.getElementById("select").onchange(e=> {
-		// document.getElementById("demo").innerHTML = "You selected: " + x;
-		// console.log(x);
-		// for (i=0;i<obj.length;i++)
-		// {var option = document.createElement("OPTION"),
-		// 		txt = document.createTextNode(obj.cityName);
-		// 	option.appendChild(txt);
-		// 	//option.setAttribute("value",k);
-		// 	select.insertBefore(option,select.lastChild);}
-		// })
-		
+		// call the refreshPage function after every 10 seconds
 		setTimeout(() => {
 			refreshPage();
 			console.log("called");
@@ -107,51 +85,3 @@ var weather = document.querySelector('#weather-table > tbody');
 	}
 		
 	
-
-
-	function myFunction() {
-		var x = document.getElementById("select").value;
-		document.getElementById("demo").innerHTML = "You selected: " + x;
-		console.log(x);
-		select1.length = 0;
-		//console.log(resObj);
-		Object.entries(resObj).forEach(([k,v]) => {
-			if (x == k){
-				
-				vcity = v;
-				for (i=0;i<v.length;i++)
-				{
-					var option = document.createElement("OPTION");
-					txt = document.createTextNode(v[i].cityName);
-					option.appendChild(txt);
-
-					//option.setAttribute("value",k);
-					select1.insertBefore(option,select1.lastChild);
-				}
-			}
-		});
-	}
-
-	function citySelected(){
-		var x = document.getElementById("select1").value;
-		document.getElementById("demo1").innerHTML = "You selected: " + x;
-		console.log(x);
-		//console.log(vcity);
-		for (i=0;i<vcity.length;i++){
-			if(x==vcity[i].cityName){
-				console.log(vcity[i]);
-				document.getElementById("city").innerHTML = vcity[i].cityName;
-				document.getElementById("data").innerHTML = vcity[i].temperature;
-				document.getElementById("wind").innerHTML = vcity[i].windSpeed;
-				document.getElementById("winddir").innerHTML = vcity[i].windDirection;
-				document.getElementById("cond").innerHTML = vcity[i].currentConditions;
-				document.getElementById("chill").innerHTML = vcity[i].wind_chill_factor;
-			}
-		
-		}
-		
-	}
-
-
-	
-		

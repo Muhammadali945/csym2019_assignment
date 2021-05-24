@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "countries": {
+            "type": "array",
+            "items": [{
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "currentCondition": {
+                            "type": "string",
+                            "enum": [
+                                "Cloud",
+                                "Rain",
+                                "Heavy rain",
+                                "Mist",
+                                "Thunderstorm",
+                                "Snow",
+                                "Sun and cloud",
+                                "Sun",
+                                "Hail",
+                                "Heavy cloud",
+                                "Sleet"
+                            ]
+                        },
+                        "temperature": {
+                            "type": "integer"
+                        },
+                        "windSpeed": {
+                            "type": "number"
+                        },
+                        "windDirection": {
+                            "type": "string"
+                        },
+                        "windChillFactor": {
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "name",
+                        "currentCondition",
+                        "temperature",
+                        "windSpeed",
+                        "windDirection",
+                        "windChillFactor"
+                    ]
+                }
+            ]
+    ,
+            "required": [
+                "countries"
+            ]
+        }
+
+    }
+
+}
