@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	*/
 	function changeCountrySelection() {
 		var x = document.getElementById("Country").value;
-		document.getElementById("selected_Country").innerHTML = "You selected: " + x; // Tells user the selected value of country on webpage
+		document.getElementById("selected_Country").innerHTML = "Your selected Country: " + x; // Tells user the selected value of country on webpage
 		console.log(x);
 		City.length = 0; // Deletes the previous text so new Country selected can be displayed
 		Object.entries(result_Object).forEach(([k,v]) => { //The forEach() method calls a function (a callback function) once
@@ -50,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
 					txt = document.createTextNode(v[i].cityName);
 					option.appendChild(txt);
 					City.insertBefore(option,City.lastChild);
+					fetchApiWeatherData(v[0].cityName); //initially call this function to display results for first city 
+					
 				}
 			}
 		});
@@ -63,12 +65,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	function citySelected(){
 		 c = document.getElementById("City").value;
-		document.getElementById("demo1").innerHTML = "You selected: " + c;
+		document.getElementById("selected_city").innerHTML = "Your selected city: " + c;
 		document.getElementById("tw").textContent = " ";
 		//console.log(vcity);
 		for (i=0;i<vcity.length;i++){
-			if(c==vcity[i].cityName){
-                console.log(vcity[i]);
+			if(c==vcity[i].cityName){ 
+                console.log(vcity[i].cityName);
                 fetchApiWeatherData(c);
 			}
 		
@@ -136,7 +138,6 @@ const kelvinToFarenhite = (val) => {
  */
 const checkTemperatureWarning = (val) =>{
     let cTemp = (val-273).toFixed(0);
-    console.log(cTemp);
     if (cTemp<-5 || cTemp>35)
     {
         showWarning();
