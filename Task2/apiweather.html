@@ -9,17 +9,17 @@
   </head>
   <body>
     <h1>UK Weather Forecast</h1>
-    <p>Please choose a Country to view weather conditions</p>
+    <p class="heavy">Please choose a Country to view weather conditions</p>
       <!--Call function when selection chages-->
       <select id="Country" class="select-css" onchange="changeCountrySelection()">
         <option value="default">Choose Country</option>
       </select>
-  <p>Choose from following cities</p>
+  <p class="heavy">Choose from following cities</p>
   <!--Call function when selection chages-->
   <select id="City" class="select-css" onchange="citySelected()">
     <option value="default">default</option>
   </select>
-  <p class="toc_title">Results for the selected City</p>
+  <p class="heavy">Results for the selected City</p>
   <!--This div is for displaying weather icon and warning icon (if any)-->
   <div>
     <p>
@@ -27,11 +27,11 @@
     <img id = "warningicon" style="width: 1000px; width: 100px;">
     </p>
   </div>
-  <!--This Div populate a table of all the weather data values returned 
+  <!--This Div populates a table of all the weather data values returned 
   from the API object. It is populated dynamicaly upon choosing city-->
-  <div id="toc_container">
-    
-      <table id = "info" class = "table" style =  "border:solid">
+  <div id="table_container">
+    <p class="heavy">Weather Report</p>
+      <table id = "weather-table" class = "table" style =  "border:solid">
         <th>Parameter</th><th>Value</th>
         <tr id ></tr>
           <td> City: </td>
@@ -74,10 +74,10 @@
   <!--Another div for displaying the warning messages (wind or temperature). This is done by checking certain parameters
   in java script code-->
 <div id = "warning">
-  <p id = "tw"></p>
+  <p id = "tw" style = "color: red;"></p>
   <p id = "ww"></p>
 </div>
 <p id="selected_Country"></p>
-<p id="demo1"></p>
+<p id="selected_city"></p>
 </body>
 </html>
