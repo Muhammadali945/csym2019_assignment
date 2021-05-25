@@ -71,7 +71,13 @@ object in the refreshPage function
 				img.innerHTML = `<img src = 'Task1/weather_icons/hail.png' width = "20px">`;
 				
 				else if (cond == "Snow")
-                img.innerHTML = `<img src = 'Task1/weather_icons/snow.png' width = "20px">`;
+				img.innerHTML = `<img src = 'Task1/weather_icons/snow.png' width = "20px">`;
+				
+				else if (cond == "Thunderstorm")
+				img.innerHTML = `<img src = 'Task1/weather_icons/thunderstorm.png' width = "20px">`;
+				
+				else if (cond == "Sun_and_Cloud")
+                img.innerHTML = `<img src = 'Task1/weather_icons/sun and cloud.png' width = "20px">`;
 
                 tr1.appendChild(img); // append the image to main row
                 weather.appendChild(tr1); //append the row to main weather-table

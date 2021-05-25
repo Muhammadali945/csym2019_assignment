@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
 					txt = document.createTextNode(v[i].cityName);
 					option.appendChild(txt);
 					City.insertBefore(option,City.lastChild);
-					fetchApiWeatherData(v[0].cityName); //initially call this function to display results for first city 
 					
 				}
 			}
@@ -169,7 +168,7 @@ const checkWindWarning = (val) =>{
 
 // This function shows a warning sign whenever called
 const showWarning = () =>{
-    warningicon.setAttribute (`src`,`./weather_icons/warning.png`);
+    warningicon.setAttribute (`src`,`/Task2/warning.png`);
 
 } 
 /**
