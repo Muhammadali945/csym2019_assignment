@@ -5,7 +5,7 @@
         "cityId":"1",
         "cityName":"Bath",
         "currentConditions":"Rain",
-        "temperature": "10 ",
+        "temperature": "7",
         "windSpeed":"33",
         "windDirection":"South",
         "wind_chill_factor":"29"
@@ -25,7 +25,7 @@
     {
         "cityId":"3",
         "cityName":"Birmingham",
-        "currentConditions":"Rain",
+        "currentConditions":"Thunderstorm",
         "temperature": "8",
         "windSpeed":"32",
         "windDirection":"West",
@@ -34,7 +34,7 @@
     {
         "cityId":"4",
         "cityName":"Bradford",
-        "currentConditions":"Rain",
+        "currentConditions":"Sun",
         "temperature": "6",
         "windSpeed":"33",
         "windDirection":"North",
@@ -52,8 +52,8 @@
     {
         "cityId":"6",
         "cityName":"Cambridge",
-        "currentConditions":"Rain",
-        "temperature": "6",
+        "currentConditions":"Heavy Rains",
+        "temperature": "5",
         "windSpeed":"32",
         "windDirection":"North",
         "wind_chill_factor":"25"
@@ -61,7 +61,7 @@
     {
         "cityId":"7",
         "cityName":"Canterbury",
-        "currentConditions":"Heavy Cloud",
+        "currentConditions":"Sun",
         "temperature": "8",
         "windSpeed":"31",
         "windDirection":"West",
@@ -232,7 +232,7 @@
     {
         "cityId":"26",
         "cityName":"Wolverhampton",
-        "currentConditions":" Sun",
+        "currentConditions":"Sun",
         "temperature": "9",
         "windSpeed":"32",
         "windDirection":"South",
@@ -241,11 +241,11 @@
     {
         "cityId":"27",
         "cityName":"Worcester",
-        "currentConditions":"Rain",
+        "currentConditions":"Thunderstorm",
         "temperature": "6",
-        "windSpeed":"34",
+        "windSpeed":"15",
         "windDirection":"South",
-        "wind_chill_factor":"27"
+        "wind_chill_factor":"20"
     }  
 ],
   "Scotland":[
@@ -261,7 +261,7 @@
   {
     "cityId":"2",
     "cityName":"Dundee",
-    "currentConditions":"Snow",
+    "currentConditions":"Rain",
     "temperature": "5",
     "windSpeed":"33",
     "windDirection":"South",
@@ -270,38 +270,38 @@
   {
     "cityId":"3",
     "cityName":"Edinburgh",
-    "currentConditions":"Snow",
-    "temperature": "6",
-    "windSpeed":"32",
+    "currentConditions":"Heavy Cloud",
+    "temperature": "8",
+    "windSpeed":"34",
     "windDirection":"East",
-    "wind_chill_factor":"26"
+    "wind_chill_factor":"24"
   },
   {
     "cityId":"4",
     "cityName":"Glasgow",
     "currentConditions":"Snow",
-    "temperature": "6",
-    "windSpeed":"32",
+    "temperature": "0",
+    "windSpeed":"05",
     "windDirection":"South",
-    "wind_chill_factor":"28"
+    "wind_chill_factor":"20"
   },
   {
     "cityId":"5",
     "cityName":"Bristol",
     "currentConditions":"Rain",
-    "temperature": "7",
-    "windSpeed":"33",
+    "temperature": "13",
+    "windSpeed":"31",
     "windDirection":"West",
-    "wind_chill_factor":"28"
+    "wind_chill_factor":"22"
   },
   {
     "cityId":"6",
     "cityName":"Inverness",
-    "currentConditions":"Snow",
+    "currentConditions":"Hail",
     "temperature": "5",
-    "windSpeed":"33",
+    "windSpeed":"9",
     "windDirection":"South",
-    "wind_chill_factor":"28"
+    "wind_chill_factor":"2"
   }
 ],
 "Wales":[
@@ -317,20 +317,20 @@
     {
         "cityId":"2",
         "cityName":"Cardiff",
-        "currentConditions":"Rain",
-        "temperature": "8",
-        "windSpeed":"32",
+        "currentConditions":"Heavy Rains",
+        "temperature": "9",
+        "windSpeed":"31",
         "windDirection":"South",
-        "wind_chill_factor":"28"
+        "wind_chill_factor":"24"
     },
     {
         "cityId":"3",
         "cityName":"Newport",
-        "currentConditions":"Rain",
+        "currentConditions":"Thunderstorm",
         "temperature": "7",
-        "windSpeed":"33",
+        "windSpeed":"32",
         "windDirection":"South",
-        "wind_chill_factor":"28"
+        "wind_chill_factor":"25"
     },
     {
         "cityId":"4",
@@ -355,7 +355,7 @@
     {
         "cityId":"2",
         "cityName":"Belfast",
-        "currentConditions":"Snow",
+        "currentConditions":"Hail",
         "temperature": "8",
         "windSpeed":"33",
         "windDirection":"East",
@@ -373,7 +373,7 @@
     {
         "cityId":"4",
         "cityName":"Lisburn",
-        "currentConditions":"Snow",
+        "currentConditions":"Hail",
         "temperature": "7",
         "windSpeed":"33",
         "windDirection":"East",
