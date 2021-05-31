@@ -1,18 +1,28 @@
 
-#weather-table {
+/**
+This piece of code define the styling of certain elements in the weather.htmo file
+*/
+
+/*selecting the weather-table bu its "id" to be styled*/
+#weather-table { 
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: auto;
 }
 
+/*Selecting the heading and data cells of the table*/
 #weather-table td, #weather-table th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
+/*TO easily identify alternate rows by slightly changing the color alternately*/
 #weather-table tr:nth-child(even){background-color: #f2f2f2;}
 
+/*Change background when move movers on table*/
 #weather-table tr:hover {background-color: #ddd;}
+
+/*Presentaton of heading of the table*/
 
 #weather-table th {
   padding-top: 12px;
