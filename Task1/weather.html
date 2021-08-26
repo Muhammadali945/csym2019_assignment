@@ -3,15 +3,17 @@
 <html>
   <head>
     <!--Linking code to css file-->
-      <link rel="stylesheet" type="text/css" href="/Task1/styles.css" /> 
+      <link rel="stylesheet" type="text/css" href="styles.css" /> 
     <!--Linking code to javascript code file-->
-      <script src="/Task1/weather.js"></script>
+      <script src="weather.js"></script>
 
       <title>Weather Forecast</title>    
   </head>
   <body>
+    <div id="Error-message" style="position: absolute; top: 20px; left:40px;font-size: 70px;"></div>
+    <div id="header">
     <h1>UK Weather Forecast</h1>
-
+    </div>
   <table id="weather-table" class = "table" > <!--create a table for data representation named "weather-table"-->
     <tbody> <!--create a body element which will be populated via js code dynamically-->
     </tbody>

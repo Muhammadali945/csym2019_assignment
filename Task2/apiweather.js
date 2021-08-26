@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					}
 		}
 
-		xhr.open('get','/Task2/UK_city_Data.json'); // open a GET request for loading json file from directory
+		xhr.open('get','UK_city_Data.json'); // open a GET request for loading json file from directory
 		xhr.send(); // send request
 
 		/*
@@ -168,7 +168,7 @@ const checkWindWarning = (val) =>{
 
 // This function shows a warning sign whenever called
 const showWarning = () =>{
-    warningicon.setAttribute (`src`,`/Task2/warning.png`);
+    warningicon.setAttribute (`src`,`warning.png`);
 
 } 
 /**
