@@ -21,7 +21,7 @@ function refreshPage(){
 						console.log(result_Object); // log the object on console
 					}
 				}
-		xhr.open('get','/Task1/weather.json'); // initiate a GET request to the specified location of JSON file
+		xhr.open('get','weather.json'); // initiate a GET request to the specified location of JSON file
 		xhr.send(); // complete the request
 		
 
@@ -56,28 +56,28 @@ object in the refreshPage function
 				
 				// check which image to return as per the conition
                 if (cond == "Rain")
-                img.innerHTML = `<img src = 'Task1/weather_icons/rain.png' width = "20px">`;
+                img.innerHTML = `<img src = 'weather_icons/rain.png' width = "20px">`;
 
                 else if (cond == "Heavy Cloud")
-				img.innerHTML = `<img src = 'Task1/weather_icons/cloud.png' width = "20px">`;
+				img.innerHTML = `<img src = 'weather_icons/cloud.png' width = "20px">`;
 				
 				else if (cond == "Heavy Rains")
-				img.innerHTML = `<img src = 'Task1/weather_icons/rain.png' width = "20px">`;
+				img.innerHTML = `<img src = 'weather_icons/rain.png' width = "20px">`;
 				
 				else if (cond == "Sun")
-				img.innerHTML = `<img src = 'Task1/weather_icons/sun.png' width = "20px">`;
+				img.innerHTML = `<img src = 'weather_icons/sun.png' width = "20px">`;
 				
 				else if (cond == "Hail")
-				img.innerHTML = `<img src = 'Task1/weather_icons/hail.png' width = "20px">`;
+				img.innerHTML = `<img src = 'weather_icons/hail.png' width = "20px">`;
 				
 				else if (cond == "Snow")
-				img.innerHTML = `<img src = 'Task1/weather_icons/snow.png' width = "20px">`;
+				img.innerHTML = `<img src = 'weather_icons/snow.png' width = "20px">`;
 				
 				else if (cond == "Thunderstorm")
-				img.innerHTML = `<img src = 'Task1/weather_icons/thunderstorm.png' width = "20px">`;
+				img.innerHTML = `<img src = 'weather_icons/thunderstorm.png' width = "20px">`;
 				
 				else if (cond == "Sun_and_Cloud")
-                img.innerHTML = `<img src = 'Task1/weather_icons/sun and cloud.png' width = "20px">`;
+                img.innerHTML = `<img src = 'weather_icons/sun and cloud.png' width = "20px">`;
 
                 tr1.appendChild(img); // append the image to main row
                 weather.appendChild(tr1); //append the row to main weather-table

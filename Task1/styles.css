@@ -2,18 +2,60 @@
 /**
 This piece of code define the styling of certain elements in the weather.htmo file
 */
+body {
+  
+  /*url('../images/bg.png');*/
+  
+  background-attachment: fixed;
+  margin: 0;
+  --white: #ffffff;
+  --red: rgb(190, 29, 29);
+  --blue: #272759;
+  --dark: #333;
+  --gray: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+  
+}
+
+#header {
+    top: -10px;
+    width: 100%;
+    margin-top: 0px;
+    overflow: hidden;
+    position: fixed;
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+#header h1 {
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+  font-size: 2rem;
+}
 
 /*selecting the weather-table bu its "id" to be styled*/
 #weather-table { 
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: auto;
+  margin-top: 9rem;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 600px;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 /*Selecting the heading and data cells of the table*/
 #weather-table td, #weather-table th {
   border: 1px solid #ddd;
   padding: 8px;
+}
+
+#weather-table tr {
+  border-bottom: 1px solid var(--white);
 }
 
 /*TO easily identify alternate rows by slightly changing the color alternately*/
