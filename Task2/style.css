@@ -4,6 +4,39 @@ This block of code is for representing the information regarding weather in a pr
 */
 
 /*This code is css for the select option for Country and city*/
+body {
+  
+  /*url('../images/bg.png');*/
+  
+  background-attachment: fixed;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+  background-image: url(../images/bg.png);
+  
+  
+}
+#header {
+  top: -10px;
+  width: 100%;
+  margin-top: 0px;
+  overflow: hidden;
+  background-color:  #333;
+  color:  #ffffff;
+}
+
+#header h1 {
+color: var(--white);
+text-decoration: none;
+text-align: center;
+font-size: 2rem;
+}
+
+div
+{
+  padding-left: 0.2cm;
+}
+
 .select-css {
     display: block;
     font-size: 16px;
@@ -47,9 +80,10 @@ This block of code is for representing the information regarding weather in a pr
     border: 1px solid rgb(31, 28, 28);
     display: table;
     font-size: 95%;
-    margin-bottom: 2em;
+    margin-left: 1em;
     padding: 10px;
-    width: auto;
+    min-width: 300px;
+    padding-left: 0.2cm;
 }
 /*for displaying warning text in any*/
 #warning{

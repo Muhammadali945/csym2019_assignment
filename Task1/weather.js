@@ -20,6 +20,11 @@ function refreshPage(){
 						populate(result_Object); // call the populate function
 						console.log(result_Object); // log the object on console
 					}
+
+					else
+					{
+						document.getElementById("Error-message").innerHTML = "Error loading the JSON file"
+					}
 				}
 		xhr.open('get','weather.json'); // initiate a GET request to the specified location of JSON file
 		xhr.send(); // complete the request

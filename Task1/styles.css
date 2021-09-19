@@ -8,13 +8,9 @@ body {
   
   background-attachment: fixed;
   margin: 0;
-  --white: #ffffff;
-  --red: rgb(190, 29, 29);
-  --blue: #272759;
-  --dark: #333;
-  --gray: lightgray;
   font-family: Arial, Helvetica, sans-serif;
   text-transform: capitalize;
+  
   
 }
 
@@ -24,8 +20,8 @@ body {
     margin-top: 0px;
     overflow: hidden;
     position: fixed;
-    background-color: var(--dark);
-    color: var(--white);
+    background-color: #333;
+    color:  #ffffff;
 }
 
 #header h1 {
